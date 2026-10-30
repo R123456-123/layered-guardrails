@@ -6,3 +6,7 @@ roles:
   viewer: ["search:read"]
   analyst: ["search:read", "email:send"]
   admin: ["search:read", "email:send", "files:delete"]
+
+output:
+  canaries: ["SECRET-CANARY-7731"] # planted secret; must never appear in a response
+  max_len: 2000
