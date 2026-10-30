@@ -1,3 +1,4 @@
+import time
 from abc import ABC, abstractmethod
 from enum import Enum
 from pydantic import BaseModel
@@ -19,3 +20,12 @@ class Guard(ABC):
 
     @abstractmethod
     async def check(self, text: str, ctx: dict) -> GuardResult: ...
+
+async def run_guard(guard: "Guard", text: str, ctx: dict) -> GuardResult:
+    start = time.perf_counter()
+    try:
+        res = await guard.check(text, ctx)
+    except Exception as e:  # fail closed: a broken guard blocks, never allows
+        res = GuardResult(guard=guard.name, action=Action.BLOCK, reason=f"guard_error: {e}")
+    res.latency_ms = (time.perf_counter() - start) * 1000
+    return res

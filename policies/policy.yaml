@@ -1,0 +1,3 @@
+input:
+  injection_threshold: 1
+  blocked_topics: ["build a bomb", "write ransomware", "credit card dumps"]
