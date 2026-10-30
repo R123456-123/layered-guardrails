@@ -1,3 +1,8 @@
 input:
   injection_threshold: 1
   blocked_topics: ["build a bomb", "write ransomware", "credit card dumps"]
+
+roles:
+  viewer: ["search:read"]
+  analyst: ["search:read", "email:send"]
+  admin: ["search:read", "email:send", "files:delete"]
