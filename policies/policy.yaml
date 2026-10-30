@@ -10,3 +10,11 @@ roles:
 output:
   canaries: ["SECRET-CANARY-7731"] # planted secret; must never appear in a response
   max_len: 2000
+
+api_keys: # demo keys only; never commit real ones
+  demo-viewer-key: viewer
+  demo-analyst-key: analyst
+  demo-admin-key: admin
+rate_limit:
+  capacity: 5
+  refill_per_sec: 0.5
