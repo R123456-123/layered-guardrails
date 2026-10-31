@@ -1,5 +1,7 @@
 # Layered Guardrails for Production LLM Agents
 
+[![tests](https://github.com/R123456-123/layered-guardrails/actions/workflows/tests.yml/badge.svg)](https://github.com/R123456-123/layered-guardrails/actions/workflows/tests.yml)
+
 A small, tested guardrail pipeline for LLM agents, plus an ablation harness that measures
 what each layer actually contributes (attack success rate, false positives, latency).
 Built as a ResearchDen technical project.
